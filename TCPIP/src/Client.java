@@ -23,7 +23,7 @@ public class Client {
                 try {
                     final char[] answerBuffer = new char[128];
                     networkInput.read(answerBuffer, 0, 128);
-                    System.out.println(new String(answerBuffer));
+                    System.out.println(new String(answerBuffer).trim());
                 } catch (SocketTimeoutException ex) {
                     System.out.println("no Answer");
                 }

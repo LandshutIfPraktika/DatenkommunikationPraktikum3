@@ -55,7 +55,7 @@ public class Server implements Runnable {
             final Thread first = new Thread(new Server(socket.accept()));
             threads.add(first);
             first.start();
-            socket.setSoTimeout(60 * 1000);
+            socket.setSoTimeout(30 * 1000);
             while (threads.stream().filter(s -> s.isAlive()).findAny().isPresent()) {
                 try {
                     final Thread thread = new Thread(new Server(socket.accept()));
